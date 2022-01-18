@@ -9,10 +9,7 @@ module.exports = (sequelize, DataTypes) => {
     Channel.belongsToMany(models.Users, {
       through: 'Usershows',
       otherKey: 'usersId',
-      foreignKey: 'channelId'
-    })
-    Channel.belongsTo(models.Tvshow, {
-      as: 'Tvshows',
+      foreignKey: 'channelId',
       foreignKey: 'tvShowId'
     })
   };
