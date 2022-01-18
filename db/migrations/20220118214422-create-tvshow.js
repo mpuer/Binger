@@ -25,7 +25,7 @@ module.exports = {
       },
       rating: {
         allowNull: false,
-        type: Sequelize.NUMERIC(1, 1)
+        type: Sequelize.NUMERIC
       },
       genre: {
         allowNull: false,

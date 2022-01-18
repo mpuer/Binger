@@ -6,7 +6,15 @@ module.exports = (sequelize, DataTypes) => {
     coverPicture: DataTypes.STRING
   }, {});
   Channel.associate = function(models) {
-    // associations can be defined here
+    Channel.belongsToMany(models.Users, {
+      through: 'Usershows',
+      otherKey: 'usersId',
+      foreignKey: 'channelId'
+    })
+    Channel.belongsTo(models.Tvshow, {
+      as: 'Tvshows',
+      foreignKey: 'tvShowId'
+    })
   };
   return Channel;
 };

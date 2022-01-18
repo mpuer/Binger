@@ -6,7 +6,11 @@ module.exports = (sequelize, DataTypes) => {
     profilePic: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    // associations can be defined here
+    User.belongsToMany(models.Channels, {
+      through: 'Usershows',
+      foreignKey: 'usersId',
+      otherKey: 'channelId'
+    })
   };
   return User;
 };
