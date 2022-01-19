@@ -9,10 +9,17 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
         title Binger
-    body 
+    body
      nav(class="navbar")
         a(class="nav-text" href="#") Browse
         a(class="nav-text" href="#") Home
         a(class="nav-text" href="#") Sign-in!
+      div
+        form(method='get' action='/browse')
+          input(type='search' name='keyword' placeholder='Keyword' )
+          label(for='showTime') Show Time:
+          select(id='showTime' name='showTime')
+            each time in times
+              option(value= time)
+          button(type='submit') Search
     block content
-    
