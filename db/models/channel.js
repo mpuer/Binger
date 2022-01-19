@@ -7,14 +7,14 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Channel.associate = function(models) {
     // associations can be defined here
-    Channel.belongsToMany(models.Users, {
-      through: 'Usershows',
-      otherKey: 'usersId',
-      foreignKey: 'channelId',
-    });
-    Channel.hasMany(models.Tvshows, {
-      foreignKey: 'tvShowId'
-    })
+    // Channel.belongsToMany(models.Users, {
+    //   through: 'Usershows',
+    //   otherKey: 'usersId',
+    //   foreignKey: 'channelId',
+    // });
+    // Channel.hasMany(models.Tvshows, {
+    //   foreignKey: 'tvShowId'
+    // })
   };
   return Channel;
 };

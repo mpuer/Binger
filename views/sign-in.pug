@@ -7,10 +7,16 @@ html(lang="en")
         link(rel="icon" type="image/png" href="/stylesheets/favicon.ico")
         link(rel='stylesheet' type="text/css" href='/stylesheets/sign-up.css')
         title User Sign Up/In
-    body 
+    body
         div
             form(class='form' method="POST" action="/sign-in")
                 h2 Sign In
+                div
+                    if errors
+                        div
+                            ul
+                                each error in errors
+                                    li  #{error}
                 input(type="hidden" name="_csrf" value=csrfToken)
                 input(type="string" id="username" name="username" placeholder='Username')
                 input(type="string" id="password" name="password" placeholder='Password')
