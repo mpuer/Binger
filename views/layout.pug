@@ -19,13 +19,25 @@ html(lang="en")
         form(method='get' action='/browse')
           input(type='search' name='keyword' placeholder='Keyword' )
           label(for='showTime') Show Time:
-        //-   select(id='showTime' name='showTime')
-        //-     each time in times
-        //-       option(value= time)
+          select(id='showTime' name='showTime')
+            each time in times
+              option(value= time)
+          div
+            input(type='checkbox' id='cartoons' name='cartoons')
+            label(for='cartoons') Cartoons
+            input(type='checkbox' id='comedy' name='comedy')
+            label(for='comedy') Comedy
+            input(type='checkbox' id='documentary' name='documentary')
+            label(for='documentary') Documentary
+            input(type='checkbox' id='drama' name='drama')
+            label(for='drama') Drama
+            input(type='checkbox' id='scary' name='scary')
+            label(for='scary') Scary
+
           button(type='submit') Search
      div(class="main-content")
       h2(class="welcome") Welcome to Binger!
       h3(class="welcome2") Follow your favorite tv shows!
-       
-      
+
+
     block content
