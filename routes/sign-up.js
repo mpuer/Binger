@@ -7,7 +7,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 
 const { csrfProtection, asyncHandler } = require('./util');
-const { validationResult } = require('express-validator');
+const { check, validationResult } = require('express-validator');
 
 router.get('/', csrfProtection, (async (req, res) => {
     const user = db.User.build();
