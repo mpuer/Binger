@@ -47,7 +47,7 @@ router.post('/', csrfProtection, loginValidators,
         if (passwordMatch) {
 
           loginUser(req, res, user)
-          return res.redirect('/profile')
+          return res.redirect('/users')
         }
       }
       errors.push('Login failed for the user and password provided')
