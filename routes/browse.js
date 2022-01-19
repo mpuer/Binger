@@ -6,8 +6,8 @@ const router = express.Router()
 
 const { csrfProtection, asyncHandler } = require('./utils');
 
-router.get('/', function(req, res) {
-  res.render('profile', {title: 'profile'});
-});
+router.get('/', asyncHandler(async (req, res) => {
+    res.render('browse', {title: 'Browse'})
+}))
 
-module.exports = router;
+module.exports = router
