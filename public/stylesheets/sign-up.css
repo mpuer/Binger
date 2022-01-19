@@ -1,7 +1,9 @@
 body {
+    display: flex;
     text-align: center;
     background-color: rgb(240, 235, 228);
     color: rgb(155, 107, 44);
+    justify-content: space-evenly;
 
 }
 
@@ -9,13 +11,14 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 15px 10px;
+    padding: 100px 100px;
     /* border: 2px solid #888888; */
     border-radius: 4px;
     box-shadow: 8px 8px 10px #888888;
     justify-content: space-around;
     margin: 200px 200px;
     border-width: 50px;
+    max-width: 500px;
 
 }
 button {
