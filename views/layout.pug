@@ -14,12 +14,12 @@ html(lang="en")
         a(class="nav-text" href="#") Browse
         a(class="nav-text" href="#") Home
         a(class="nav-text" href="#") Sign-in!
-      div
-        form(method='get' action='/browse')
-          input(type='search' name='keyword' placeholder='Keyword' )
-          label(for='showTime') Show Time:
-          select(id='showTime' name='showTime')
-            each time in times
-              option(value= time)
-          button(type='submit') Search
+     div
+       form(method='get' action='/browse')
+         input(type='search' name='keyword' placeholder='Keyword' )
+         label(for='showTime') Show Time:
+         select(id='showTime' name='showTime')
+           each time in times
+             option(value= time)
+         button(type='submit') Search
     block content
