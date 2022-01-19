@@ -1,0 +1,31 @@
+body {
+    text-align: center;
+    background-color: rgb(240, 235, 228);
+    color: rgb(155, 107, 44);
+
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    /* border: 2px solid #888888; */
+    border-radius: 4px;
+    box-shadow: 8px 8px 10px #888888;
+    justify-content: space-around;
+    margin: 200px 200px;
+    border-width: 50px;
+
+}
+button {
+    background-color: rgb(223, 223, 223);
+}
+
+label {
+    float: left;
+    width: 10em;  
+}
+input {
+    margin-bottom: 20px;
+}
