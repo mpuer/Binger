@@ -8,8 +8,8 @@ const {loginUser} = require('../auth')
 const { csrfProtection, asyncHandler } = require('./util');
 
 router.get('/', csrfProtection, (req, res) => {
-  res.render('login', {
-    title: 'Login',
+  res.render('sign-in', {
+    title: 'Sign In',
     csrfToken: req.csrfToken(),
   });
 });
@@ -54,8 +54,8 @@ router.post('/', csrfProtection, loginValidators,
    } else {
      errors = validatorErrors.array().map((error) => error.msg)
    }
-   res.render('login', {
-     title: 'Login',
+   res.render('sign-in', {
+     title: 'Sign In',
      username,
      errors,
      csrfToken: req.csrfToken()

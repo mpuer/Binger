@@ -12,7 +12,7 @@ const browseRouter = require('./routes/browse');
 const channelsRouter = require('./routes/channels');
 const reviewsRouter = require('./routes/reviews');
 const signupRouter = require('./routes/sign-up');
-const loginRouter = require('./routes/login');
+const loginRouter = require('./routes/sign-in');
 
 const app = express();
 
