@@ -1,0 +1,23 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel='stylesheet' type="text/css" href='/stylesheets/navbar.css')
+        link(rel="preconnect" href="https://fonts.googleapis.com")
+        link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+        link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
+        title Binger
+    body 
+     nav(class="navbar")
+        a(class="nav-text" href="#") Navbar
+        a(class="nav-text" href="#") Features
+        a(class="nav-text" href="#") Pricing
+     block content 
+    form(class="form" method="GET" action="/sign-up")
+        label(for="username") Username:
+        input(type="string" id="username" name="username")
+        label(for="password") Password:
+        input(type="string" id="password" name="password")
+        button(type="submit") Sign-up!

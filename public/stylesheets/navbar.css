@@ -1,0 +1,22 @@
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    height: 70px;
+    background-color: tan;
+
+}
+
+a.nav-text {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: bold;
+    color: brown;
+    font-family: 'Montserrat', sans-serif;
+}
