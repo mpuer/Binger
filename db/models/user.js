@@ -6,11 +6,14 @@ module.exports = (sequelize, DataTypes) => {
     profilePic: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    User.belongsToMany(models.Channels, {
-      through: 'Usershows',
-      foreignKey: 'usersId',
-      otherKey: 'channelId'
-    })
+    // User.belongsToMany(models.Channels, {
+    //   through: 'Usershows',
+    //   foreignKey: 'usersId',
+    //   otherKey: 'channelId'
+    // })
+    // User.hasMany(models.Reviews, {
+    //   foreignkey: 'tvShowId'
+    // })
   };
   return User;
 };
