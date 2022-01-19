@@ -4,12 +4,10 @@ const db = require('../db/models')
 
 const router = express.Router()
 
-const bcrypt = require('bcryptjs')
-
 const { csrfProtection, asyncHandler } = require('./util');
 
-router.get('/', asyncHandler(async (req, res) => {
-    res.render('sign-up', {title: 'Sign Up'})
-}))
+router.get('/', function(req, res) {
+  res.render('login', {title: 'login'});
+});
 
-module.exports = router
+module.exports = router;
