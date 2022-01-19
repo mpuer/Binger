@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     //   otherKey: 'channelId'
     // })
     // User.hasMany(models.Reviews, {
-    //   foreignkey: 'tvShowId'
+    //   foreignkey: 'usersId'
     // })
   };
   return User;

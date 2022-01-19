@@ -24,7 +24,15 @@ const signupValidators = [
         .exists({ checkFalsy: true })
         .withMessage('User name cannot be blank')
         .isLength({ max: 20 })
-        .withMessage('User name cannot be more than 20 characters'),
+        .withMessage('User name cannot be more than 20 characters')
+        .custom((value) => {
+            return db.User.findOne({ where: { username: value } })
+            .then((user) => {
+                if(user) {
+                    return Promise.reject('Username already taken')
+                }
+            })
+        }),
 
     check('password')
         .exists({ checkFalsy: true })
@@ -33,9 +41,9 @@ const signupValidators = [
         .withMessage('Password must be longer than 5 characters'),
     check('confirmPassword')
         .exists({ checkFalsy: true })
-        .withMessage('Password cannot be blank')
+        .withMessage('Confirm password cannot be blank')
         .isLength( {min: 5} )
-        .withMessage('Password must be longer than 5 characters')
+        .withMessage('Confirm password must be longer than 5 characters')
         .custom((value, { req }) => {
             if (value !== req.body.password) {
             throw new Error('Passwords must match');

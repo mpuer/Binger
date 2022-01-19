@@ -13,6 +13,7 @@ const channelsRouter = require('./routes/channels');
 const reviewsRouter = require('./routes/reviews');
 const signupRouter = require('./routes/sign-up');
 const signinRouter = require('./routes/sign-in');
+const { restoreUser } = require('./auth');
 
 const app = express();
 
@@ -40,6 +41,7 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
+app.use(restoreUser);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/browse', browseRouter);
