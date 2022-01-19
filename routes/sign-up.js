@@ -75,4 +75,4 @@ router.post('/', csrfProtection, signupValidators,
 }))
 
 
-module.exports = router
+module.exports = router;
