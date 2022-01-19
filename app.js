@@ -12,7 +12,7 @@ const browseRouter = require('./routes/browse');
 const channelsRouter = require('./routes/channels');
 const reviewsRouter = require('./routes/reviews');
 const signupRouter = require('./routes/sign-up');
-const loginRouter = require('./routes/sign-in');
+const signinRouter = require('./routes/sign-in');
 
 const app = express();
 
@@ -40,13 +40,13 @@ app.use(
 // create Session table if it doesn't already exist
 store.sync();
 
-app.use('/home', indexRouter);
+app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/browse', browseRouter);
 app.use('/channels', channelsRouter);
 app.use('/reviews', reviewsRouter);
 app.use('/sign-up', signupRouter);
-app.use('/login', loginRouter);
+app.use('/sign-in', signinRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
