@@ -8,12 +8,12 @@ const router = express.Router()
 const { csrfProtection, asyncHandler } = require('./util');
 
 router.get('/', function(req, res) {
-  res.render('profile', {title: 'profile'});
+  res.render('index', {title: 'index'});
 });
 
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/home')
+  res.redirect('/index')
 })
 
 module.exports = router;

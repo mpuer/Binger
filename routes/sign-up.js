@@ -5,6 +5,7 @@ const db = require('../db/models')
 const router = express.Router()
 
 const bcrypt = require('bcryptjs')
+const {loginUser} = require('../auth')
 
 const { csrfProtection, asyncHandler } = require('./util');
 const { check, validationResult } = require('express-validator');
