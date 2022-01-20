@@ -15,7 +15,7 @@ html(lang="en")
         a(class="nav-text" href="/") Home
         a(class="nav-text" href="/sign-in") Sign-in
         a(class="nav-text" href="/sign-up") Sign-up
-     div
+      div
         form(method='get' action='/browse')
           input(type='search' name='keyword' placeholder='Keyword' )
           //- label(for='showTime') Show Time:
@@ -38,9 +38,5 @@ html(lang="en")
             input(type='checkbox' id='scary' name='scary' value='Scary')
             label(for='scary') Scary
           button(type='submit') Search
-     div(class="main-content")
-      h2(class="welcome") Welcome to Binger!
-      h3(class="welcome2") Follow your favorite tv shows!
-
 
     block content

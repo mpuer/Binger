@@ -6,12 +6,12 @@ module.exports = (sequelize, DataTypes) => {
     profilePic: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    User.belongsToMany(models.Channels, {
+    User.belongsToMany(models.Channel, {
       through: 'Usershows',
       foreignKey: 'usersId',
       otherKey: 'channelId'
     })
-    User.hasMany(models.Reviews, {
+    User.hasMany(models.Review, {
       foreignkey: 'usersId'
     })
   };

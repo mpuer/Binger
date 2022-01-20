@@ -10,10 +10,10 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Tvshow.associate = function(models) {
     // associations can be defined here
-    Tvshow.hasMany(models.Channels, {
+    Tvshow.hasMany(models.Channel, {
       foreignKey: 'tvShowId'
     })
-    Tvshow.hasMany(models.Reviews, {
+    Tvshow.hasMany(models.Review, {
       foreignKey: 'tvShowId'
     })
   };
