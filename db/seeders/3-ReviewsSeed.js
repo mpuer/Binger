@@ -9,97 +9,97 @@ module.exports = {
       Example:
       */
    return queryInterface.bulkInsert('Reviews', [{
-      review: 'Great',
-      rating: 5,
+      review: 'Really bad show, wasted my time.',
+      rating: 2,
       tvShowId: 1,
       usersId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Meh',
-      rating: 3,
-      tvShowId: 1,
-      usersId: 2,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      review: 'Bad',
-      rating: 2,
-      tvShowId: 1,
+      review: 'Great kids show! 10/10 would watch again.',
+      rating: 5,
+      tvShowId: 2,
       usersId: 3,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Good',
+      review: 'Really good documentary about juco colleges football programs!',
       rating: 4,
-      tvShowId: 2,
-      usersId: 1,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      review: 'Really bad',
-      rating: 1,
       tvShowId: 3,
       usersId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Meh',
-      rating: 3,
+      review: 'I wish I was spiderman.',
+      rating: 5,
+      tvShowId: 4,
+      usersId: 8,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      review: 'Almost made me pee my pants!',
+      rating: 4,
       tvShowId: 5,
       usersId: 7,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Meh',
+      review: 'The show was ok, nothing great or bad about it.',
       rating: 3,
-      tvShowId: 10,
+      tvShowId: 6,
+      usersId: 2,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      review: 'So friggin hilarious, watched so many times already!',
+      rating: 5,
+      tvShowId: 7,
       usersId: 11,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Good',
-      rating: 4,
-      tvShowId: 5,
+      review: 'One of the best comedy shows around, definitely a must watch!',
+      rating: 5,
+      tvShowId: 8,
       usersId: 6,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Great',
-      rating: 5,
+      review: 'Watched this with my daughters and found I quite enjoyed it.',
+      rating: 4,
+      tvShowId: 9,
+      usersId: 4,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      review: 'A documentary about the GOAT? Say less.',
+      rating: 1,
       tvShowId: 10,
       usersId: 4,
       createdAt: new Date(),
       updatedAt: new Date()
     },
     {
-      review: 'Horrible',
-      rating: 1,
-      tvShowId: 7,
-      usersId: 4,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      review: 'Meh',
-      rating: 3,
-      tvShowId: 8,
-      usersId: 4,
-      createdAt: new Date(),
-      updatedAt: new Date()
-    },
-    {
-      review: 'Good',
+      review: 'What a great show about zombies! Must watch!',
       rating: 5,
       tvShowId: 11,
+      usersId: 4,
+      createdAt: new Date(),
+      updatedAt: new Date()
+    },
+    {
+      review: 'Really entertaining show',
+      rating: 4,
+      tvShowId: 12,
       usersId: 1,
       createdAt: new Date(),
       updatedAt: new Date()
