@@ -27,7 +27,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'cartoon',
+        genre: 'cartoons',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -37,7 +37,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 5,
-        genre: 'educational',
+        genre: 'documentary',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -47,7 +47,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 5,
-        genre: 'cartoon',
+        genre: 'cartoons',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -107,7 +107,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'educational',
+        genre: 'documentary',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -117,7 +117,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'cartoon',
+        genre: 'cartoons',
         createdAt: new Date(),
         updatedAt: new Date()
       },
