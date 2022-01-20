@@ -8,7 +8,7 @@ const router = express.Router()
 const { csrfProtection, asyncHandler } = require('./util');
 
 router.get('/', function(req, res) {
-  res.render('index', {title: 'index'});
+  res.render('users', {title: 'index'});
 });
 
 router.post('/logout', (req, res) => {

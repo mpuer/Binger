@@ -1,4 +1,4 @@
-body {
+html, body {
     display: flex;
     flex-direction: column;
 }
@@ -40,9 +40,15 @@ a.nav-text {
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
+    padding: 30px 15px;
     /* justify-content: space-evenly; */
 }
 .browse-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.user-content {
     width: 80%;
     height: 1000px;
 }
@@ -56,7 +62,11 @@ a.nav-text {
 footer {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    background-color: blanchedalmond;
+    position:absolute;
+    bottom:0;
+    width:100%;
 }
 
 form {
@@ -86,4 +96,8 @@ label {
 
 search-box {
     padding-bottom: 100px;
+}
+
+.names {
+    justify-content: space-evenly;
 }
