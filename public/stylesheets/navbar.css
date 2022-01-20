@@ -9,7 +9,7 @@ body {
     justify-content:space-evenly;
     align-items: center;
     height: 70px;
-    background-color: tan;
+    background-color: rgb(228, 220, 210);
 
 }
 
@@ -19,4 +19,71 @@ a.nav-text {
     font-weight: bold;
     color: brown;
     font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    /* display: flex;  */
+    /* flex-direction: column; */
+    box-sizing: border-box;
+}
+
+.column {
+    float: right;
+    padding: 10px;
+    height: 300px;
+    /* background-color: blue; */
+}
+
+.search-area {
+    width: 20%;
+    height: 1000px;
+    /* background-color: blue; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+}
+.browse-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.main-content {
+    width: 80%;
+    height: 1000px;
+    /* background-color: red; */
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: space-between;
+    font-size:larger;
+}
+
+button {
+    padding: 1px;
+    border-radius: 6px;
+    margin:10px;
+}
+
+.genres {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding-top: 15px;
+}
+
+label {
+    padding-left: 10px;
+}
+
+search-box {
+    padding-bottom: 100px;
 }
