@@ -12,7 +12,7 @@ const { csrfProtection, asyncHandler } = require('./util');
 
 router.post('/', asyncHandler(async (req, res) => {
     const { keyword } = req.body;
-   
+
     const data = req.body;
     const array = Object.values(data);
 
@@ -28,7 +28,7 @@ router.post('/', asyncHandler(async (req, res) => {
                 ]
             }
         })
-       
+
     }
 
     else {
@@ -41,8 +41,7 @@ router.post('/', asyncHandler(async (req, res) => {
             }
         })
     }
-    console.log("breaddit", tvShows)
-    
+    console.log('debug', tvShows)
     res.render('browse', {tvShows, title: 'Browse'})
 }))
 
