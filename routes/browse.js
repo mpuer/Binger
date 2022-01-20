@@ -29,6 +29,7 @@ router.get('/', asyncHandler(async (req, res) => {
         })
     }
     else {
+        array.shift()
         tvShows = await Tvshow.findAll({
             where: {
                 genre: {
