@@ -15,9 +15,11 @@ router.get('/', asyncHandler(async (req, res) => {
     const data = req.body;
     const array = Object.values(data);
 
+    let tvShows;
+
     if (keyword) {
         array.shift()
-        const tvShows = await Tvshow.findAll({
+        tvShows = await Tvshow.findAll({
             where: {
                 [Op.and]: [
                     { name: { [Op.iLike]: `%${keyword}%`} },
@@ -25,11 +27,19 @@ router.get('/', asyncHandler(async (req, res) => {
                 ]
             }
         })
-
+    }
+    else {
+        tvShows = await Tvshow.findAll({
+            where: {
+                genre: {
+                    [Op.or]: array
+                }
+            }
+        })
     }
 
 
-    res.render('browse', {title: 'Browse'})
+    res.render('browse', tvShows, {title: 'Browse'})
 }))
 
 module.exports = router
