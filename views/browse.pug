@@ -2,19 +2,14 @@ extends layout.pug
 
 block content
     div(class="column browse-content")
-        h2 askldjlaskd 
-        h3 askldjaskljda
+        h2= `TV Show`
         div
-            if shows
-                div
-                     ul
-                        each show in tvShows
-                            li(class="shows")  #{show}
-
-
-
-
-
+            ul
+                each show in tvShows
+                    li #{show.name}
+                    li #{show.rating}
+                    li #{show.genre}
+                    li #{show.synopsis}
 
 
 

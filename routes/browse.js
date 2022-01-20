@@ -12,9 +12,9 @@ const { csrfProtection, asyncHandler } = require('./util');
 
 router.post('/', asyncHandler(async (req, res) => {
     const { keyword } = req.body;
-   
+
     const data = req.body;
-    const array = Object.values(data);
+    const array = Object.keys(data);
 
     let tvShows;
 
@@ -28,11 +28,12 @@ router.post('/', asyncHandler(async (req, res) => {
                 ]
             }
         })
-       
+
     }
 
     else {
         array.shift()
+        console.log('debug', array)
         tvShows = await Tvshow.findAll({
             where: {
                 genre: {
@@ -41,8 +42,6 @@ router.post('/', asyncHandler(async (req, res) => {
             }
         })
     }
-    console.log("breaddit", tvShows)
-    
     res.render('browse', {tvShows, title: 'Browse'})
 }))
 
