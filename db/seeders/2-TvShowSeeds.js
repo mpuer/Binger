@@ -12,7 +12,7 @@ module.exports = {
       Example:
       */
       return queryInterface.bulkInsert('Tvshows', [{
-        name: 'Euphoria',
+        name: 'Bridgerton',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -32,7 +32,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Magic School Bus',
+        name: 'Last Chance U',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -52,7 +52,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'The Stand',
+        name: 'The Haunting of Hill House ',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -102,7 +102,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Blues Clues',
+        name: 'The Last Dance',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -117,7 +117,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'cartoons',
+        genre: 'scary',
         createdAt: new Date(),
         updatedAt: new Date()
       },
