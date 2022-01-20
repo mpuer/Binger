@@ -57,12 +57,12 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'scary',
+        genre: 'horror',
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        name: 'NCIS',
+        name: 'Cobra Kai',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -92,7 +92,7 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Afterlife',
+        name: "Dawson's Creek",
         image: null,
         showtime: new Date(),
         synopsis: 'text',
@@ -112,12 +112,22 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        name: 'Sesame Street',
+        name: 'Kingdom',
         image: null,
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'scary',
+        genre: 'horror',
+        createdAt: new Date(),
+        updatedAt: new Date()
+      },
+      {
+        name: 'Ozark',
+        image: null,
+        showtime: new Date(),
+        synopsis: 'text',
+        rating: 4,
+        genre: 'drama',
         createdAt: new Date(),
         updatedAt: new Date()
       },
