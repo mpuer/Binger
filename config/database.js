@@ -1,6 +1,6 @@
-// const {
-//   db: { username, password, database, host },
-// } = require('./index');
+const {
+  db: { username, password, database, host },
+} = require('./index');
 
 module.exports = {
   development: {
