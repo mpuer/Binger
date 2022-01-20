@@ -17,7 +17,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Romance',
+        genre: 'romance',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -27,7 +27,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Cartoon',
+        genre: 'cartoon',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -37,7 +37,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 5,
-        genre: 'Educational',
+        genre: 'educational',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -47,7 +47,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 5,
-        genre: 'Cartoon',
+        genre: 'cartoon',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -57,7 +57,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Scary',
+        genre: 'scary',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -67,7 +67,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Drama',
+        genre: 'drama',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -77,7 +77,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Comedy',
+        genre: 'comedy',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -87,7 +87,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Comedy',
+        genre: 'comedy',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -97,7 +97,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Romance',
+        genre: 'romance',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -107,7 +107,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Educational',
+        genre: 'educational',
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -117,7 +117,7 @@ module.exports = {
         showtime: new Date(),
         synopsis: 'text',
         rating: 4,
-        genre: 'Cartoon',
+        genre: 'cartoon',
         createdAt: new Date(),
         updatedAt: new Date()
       },
