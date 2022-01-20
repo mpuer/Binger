@@ -8,17 +8,16 @@ html(lang="en")
         link(rel='stylesheet' type="text/css" href='/stylesheets/sign-up.css')
         title User Sign Up/In
     body
-
-            form(class="form" method="POST" action="/sign-up")
-                h2 Sign Up
-                div
-                    if errors
-                        div
-                            ul
-                                each error in errors
-                                    li  #{error}
-                input(type="hidden" name="_csrf" value=csrfToken)
-                input(type="string" id="username" name="username" placeholder='Username')
-                input(type="string" id="password" name="password" placeholder='Password')
-                input(type="string" id="confirmPassword" name="confirmPassword" placeholder='Confirm Password')
-                button(type="submit") Sign-up!
+        form(class="form" method="POST" action="/sign-up")
+            h2 Sign Up
+            div
+                if errors
+                    div
+                        ul
+                            each error in errors
+                                li  #{error}
+            input(type="hidden" name="_csrf" value=csrfToken)
+            input(type="string" id="username" name="username" placeholder='Username')
+            input(type="password" id="password" name="password" placeholder='Password' )
+            input(type="password" id="confirmPassword" name="confirmPassword" placeholder='Confirm Password' )
+            button(type="submit") Sign-up!
