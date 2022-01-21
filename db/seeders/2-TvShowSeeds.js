@@ -104,7 +104,7 @@ module.exports = {
       },
       {
         name: 'The Last Dance',
-        image: '/images/last_chance_u.jpeg',
+        image: '/images/last_chance.jpeg',
         showtime: new Date(),
         synopsis: `Charting the rise of the 1990's Chicago Bulls, led by Michael Jordan, one of the most notable dynasties in sports history.`,
         rating: 4,
@@ -114,7 +114,7 @@ module.exports = {
       },
       {
         name: 'Kingdom',
-        image: '/images/king.jpeg',
+        image: '/images/kingdom.jpeg',
         showtime: new Date(),
         synopsis: 'While strange rumors about their ill King grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.',
         rating: 5,
