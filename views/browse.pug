@@ -7,7 +7,7 @@ block content
             ul
                 each show in tvShows
                     li 
-                      div 
+                      div(class="shows")
                         img(src=show.image)
                         p #{show.name}
                         p #{show.genre}
@@ -21,4 +21,3 @@ block content
 
 
 
-        button(type='Logout')

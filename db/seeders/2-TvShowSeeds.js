@@ -14,7 +14,7 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Tvshows', [{
         name: 'Bridgerton',
-        image: '/images/bridgerton-season-2-netflix-cast-return-date-spoilers-news-1609359153.jpeg',
+        image: '/images/bridgerton.jpeg',
         showtime: new Date(),
         synopsis: 'Wealth, lust, and betrayal set against the backdrop of Regency-era England, seen through the eyes of the powerful Bridgerton family.',
         rating: 2,
@@ -104,7 +104,7 @@ module.exports = {
       },
       {
         name: 'The Last Dance',
-        image: '/images/last_chance.jpeg',
+        image: '/images/the_last_dance.jpeg',
         showtime: new Date(),
         synopsis: `Charting the rise of the 1990's Chicago Bulls, led by Michael Jordan, one of the most notable dynasties in sports history.`,
         rating: 4,
