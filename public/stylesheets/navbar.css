@@ -69,7 +69,8 @@ a.nav-text {
 .main-content {
     width: 80%;
     height: 1000px;
-    /* background-color: red; */
+    background-image: url("/images/icon.jpeg");
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -170,4 +171,8 @@ h2 {
 
 .titles.rating.synopsis.genre {
     color:rgb(0, 255, 255);
+}
+
+.binger-icon {
+    font-size: larger;
 }

@@ -4,6 +4,7 @@ const db = require('../db/models')
 const bcrypt = require('bcryptjs');
 const router = express.Router()
 const {loginUser, loggedIn} = require('../auth')
+const { Channel } = db;
 
 const { csrfProtection, asyncHandler } = require('./util');
 
@@ -31,8 +32,8 @@ router.post('/', csrfProtection, loginValidators,
       username,
       password,
     } = req.body
-
     let errors = [];
+    const channels = await db.Channel.findAll()
 
     const validatorErrors = validationResult(req);
 
@@ -48,13 +49,13 @@ router.post('/', csrfProtection, loginValidators,
           loginUser(req, res, user)
           const logged = loggedIn(req, res)
           res.render('users', {
-          logged,
+          logged, channels
           })
         }
       }
       errors.push('Login failed for the user and password provided')
-   } else {
-     errors = validatorErrors.array().map((error) => error.msg)
+    } else {
+      errors = validatorErrors.array().map((error) => error.msg)
    }
    res.render('sign-in', {
      title: 'Sign In',

@@ -8,14 +8,14 @@ html(lang="en")
         link(rel="preconnect" href="https://fonts.googleapis.com")
         link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
         link(href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet")
-        link(rel="icon" type="image/png" href="/stylesheets/favicon.ico")
+        link(rel="icon" type="image/png" href="../stylesheets/favicon.ico" class="binger-icon")
         title Binger
     body
       div(class="container")
         div(class="header")
           nav(class="navbar")
            if logged
-            a(class="nav-text" href="/browse") Home
+            a(class="nav-text" href="/") Home
             a(class="nav-text" href="/users") Profile
             a(class="nav-text" href="/users/logout") Logout 
            else
