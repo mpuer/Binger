@@ -1,6 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
+    
 }
 
 .navbar {
@@ -40,9 +41,25 @@ a.nav-text {
     /* background-color: blue; */
     display: flex;
     flex-direction: column;
+    padding: 30px 15px;
     /* justify-content: space-evenly; */
 }
 .browse-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.user-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.review-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.channel-content {
     width: 80%;
     height: 1000px;
 }
@@ -54,9 +71,27 @@ a.nav-text {
 }
 
 footer {
+    background-color: blanchedalmond;
+    position:absolute;
+    bottom:0;
+    width:100%;
+}
+
+.bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+
+}
+
+a {
+    text-decoration: none;
+    color: silver;
+}
+
+p {
+    font-weight: 900;
+    color:rosybrown
 }
 
 form {

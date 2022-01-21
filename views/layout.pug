@@ -11,42 +11,53 @@ html(lang="en")
         link(rel="icon" type="image/png" href="/stylesheets/favicon.ico")
         title Binger
     body
-      nav(class="navbar")
-        a(class="nav-text" href="/") Home
-        a(class="nav-text" href="/sign-in") Login
-        a(class="nav-text" href="/sign-up") Register
-      div
-        block content
-        div(class="column search-area")
-          form(method='post' action='/browse')
-            div(class="searchbox")
-              input(type='search' name='keyword' placeholder='Keyword' )
-              button(type='submit') Search
-              //- label(for='showTime') Show Time:
-              //- select(id='showTime' name='showTime')
-              //-   each time in times
-              //-     option(value= time)
-            div(class="genres")
-              input(type='checkbox' id='Cartoons' name='Cartoons')
-              label(for='Cartoons') Cartoons
-            div(class="genres")
-              input(type='checkbox' id='Comedy' name='Comedy')
-              label(for='Comedy') Comedy
-            div(class="genres")
-              input(type='checkbox' id='Documentary' name='Documentary')
-              label(for='Documentary') Documentary
-            div(class="genres")
-              input(type='checkbox' id='Drama' name='Drama')
-              label(for='Drama') Drama
-            div(class="genres")
-              input(type='checkbox' id='Horror' name='Horror')
-              label(for='Horror') Horror
-            div(class="genres")
-              input(type='checkbox' id='Romance' name='Romance')
-              label(for='Romance') Romance
-      block foot
-        footer
-          p Vu
-          p Matthew
-          p Christopher
-          p Chiew
+      div(class="container")
+        div(class="header")
+          nav(class="navbar")
+            a(class="nav-text" href="/") Home
+            a(class="nav-text" href="/sign-in") Login
+            a(class="nav-text" href="/sign-up") Register
+          div(class="body")
+            block content
+            div(class="column search-area")
+              form(method='post' action='/browse')
+                div(class="searchbox")
+                  input(type='search' name='keyword' placeholder='Keyword' )
+                  button(type='submit') Search
+                  //- label(for='showTime') Show Time:
+                  //- select(id='showTime' name='showTime')
+                  //-   each time in times
+                  //-     option(value= time)
+                div(class="genres")
+                  input(type='checkbox' id='cartoons' name='cartoons')
+                  label(for='cartoons') Cartoons
+                div(class="genres")
+                  input(type='checkbox' id='comedy' name='comedy')
+                  label(for='comedy') Comedy
+                div(class="genres")
+                  input(type='checkbox' id='documentary' name='documentary')
+                  label(for='documentary') Documentary
+                div(class="genres")
+                  input(type='checkbox' id='drama' name='drama')
+                  label(for='drama') Drama
+                div(class="genres")
+                  input(type='checkbox' id='scary' name='scary')
+                  label(for='scary') Scary
+                div(class="genres")
+                  input(type='checkbox' id='romance' name='romance')
+                  label(for='romance') Romance
+          block foot
+            footer
+              div(class="bottom")
+                div(class="names")
+                  p Vu
+                  a(href="https://github.com/vth-co") Github
+                div(class="names")
+                  p Matthew 
+                  a(href="https://github.com/mpuer") Github
+                div(class="names")
+                  p Christopher 
+                  a(href="https://github.com/chrisbritton842") Github
+                div(class="names")
+                  p Chiew
+                  a(href="https://github.com/chiews89") Github
