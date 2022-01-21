@@ -11,7 +11,10 @@ block content
                         img(src=show.image class="images")
                         div(class="description")
                             p(class="titles") #{show.name}
-                            p #{show.genre}
-                            p #{show.rating}
+                            p(class="genre") #{show.genre}
+                            p(class="rating") #{show.rating}
                             p(class="synopsis") #{show.synopsis}
+                            select
+                                    each channel in channels
+                                        option(value=channel.name)
                             button(type="submit") Add To Channels
