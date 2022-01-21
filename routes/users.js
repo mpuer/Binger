@@ -17,6 +17,6 @@ router.get('/', function(req, res) {
 router.post('/logout', (req, res) => {
   logoutUser(req, res);
   res.redirect('/index')
-})
+});
 
 module.exports = router;
