@@ -8,16 +8,10 @@ block content
                 each show in tvShows
                     li 
                       div(class="shows")
-                        img(src=show.image)
-                        p #{show.name}
-                        p #{show.genre}
-                        p #{show.rating}
-                        p #{show.synopsis}
-
-
-
-
-
-
-
-
+                        img(src=show.image class="images")
+                        div(class="description")
+                            p(class="titles") #{show.name}
+                            p #{show.genre}
+                            p #{show.rating}
+                            p(class="synopsis") #{show.synopsis}
+                            button(type="submit") Add To Channels
