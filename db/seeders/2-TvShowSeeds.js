@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         name: 'Last Chance U',
-        image: null,
+        image: '../images/last_chance_u.jpeg',
         showtime: new Date(),
         synopsis: 'Intense look inside the world of junior college football, chronicling the stories of players and coaches in the classroom and on the field.',
         rating: 4,
@@ -74,7 +74,7 @@ module.exports = {
       },
       {
         name: 'The Office',
-        image: null,
+        image: '../images/the_office.jpeg',
         showtime: new Date(),
         synopsis: 'A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.',
         rating: 5,
@@ -84,7 +84,7 @@ module.exports = {
       },
       {
         name: '30 Rock',
-        image: null,
+        image: '../images/30_rock.jpeg',
         showtime: new Date(),
         synopsis: 'Liz Lemon, head writer of the sketch comedy show "TGS with Tracy Jordan", must deal with an arrogant new boss and a crazy new star, all while trying to run a successful television show without losing her mind.',
         rating: 5,
@@ -94,7 +94,7 @@ module.exports = {
       },
       {
         name: "Dawson's Creek",
-        image: null,
+        image: '../images/dawsons_creek.jpeg',
         showtime: new Date(),
         synopsis: 'Four friends in a small coastal town help each other cope with adolescence.',
         rating: 4,
@@ -114,7 +114,7 @@ module.exports = {
       },
       {
         name: 'Kingdom',
-        image: null,
+        image: '../images/king.jpeg',
         showtime: new Date(),
         synopsis: 'While strange rumors about their ill King grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.',
         rating: 5,
@@ -124,7 +124,7 @@ module.exports = {
       },
       {
         name: 'Ozark',
-        image: null,
+        image: '../images/ozark.jpeg',
         showtime: new Date(),
         synopsis: 'A financial advisor drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.',
         rating: 4,
