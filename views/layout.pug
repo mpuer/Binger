@@ -14,6 +14,11 @@ html(lang="en")
       div(class="container")
         div(class="header")
           nav(class="navbar")
+           if logged
+            a(class="nav-text" href="/") Home
+            a(class="nav-text" href="/sign-in") Profile
+            a(class="nav-text" href="/sign-up") Logout 
+           else
             a(class="nav-text" href="/") Home
             a(class="nav-text" href="/sign-in") Login
             a(class="nav-text" href="/sign-up") Register

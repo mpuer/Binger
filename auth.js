@@ -17,9 +17,14 @@ const requireAuth = (req, res, next) => {
     return next();
 };
 
+const loggedIn = (req, res) => {
+  if (req.session.auth) {
+    return true
+  } else {
+    return false
+  }
+}
 const restoreUser = async (req, res, next) => {
-    console.log(req.session);
-
     if (req.session.auth) {
       const { userId } = req.session.auth;
 
@@ -45,5 +50,6 @@ module.exports = {
     loginUser,
     logoutUser,
     requireAuth,
-    restoreUser
+    restoreUser,
+    loggedIn
 };

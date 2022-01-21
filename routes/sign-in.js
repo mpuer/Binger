@@ -3,7 +3,7 @@ const { check, validationResult } = require('express-validator');
 const db = require('../db/models')
 const bcrypt = require('bcryptjs');
 const router = express.Router()
-const {loginUser} = require('../auth')
+const {loginUser, loggedIn} = require('../auth')
 
 const { csrfProtection, asyncHandler } = require('./util');
 
@@ -45,9 +45,11 @@ router.post('/', csrfProtection, loginValidators,
       if (user) {
         const passwordMatch = await bcrypt.compare(password, user.hashedPassword.toString())
         if (passwordMatch) {
-
           loginUser(req, res, user)
-          return res.redirect('/users')
+          const logged = loggedIn(req, res)
+          res.render('users', {
+          logged,
+          })
         }
       }
       errors.push('Login failed for the user and password provided')
