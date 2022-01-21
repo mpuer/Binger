@@ -49,12 +49,19 @@ router.post('/', asyncHandler(async (req, res) => {
   });
 }))
 
-router.post('/:movieId', asyncHandler(async (req, res) => {
-    const { movieId } = req.params;
-    const { review } = req.body;
+router.post('/:showId', asyncHandler(async (req, res) => {
+    const { showId } = req.params;
+    const { review, rating } = req.body;
     const userId = req.session.auth;
 
-    
+    const newReview = db.Review.build({
+        review,
+        rating,
+        showId,
+        userId,
+    });
+
+    await newReview.save();
 }))
 
 module.exports = router
