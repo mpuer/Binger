@@ -10,21 +10,21 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Channels', [{
         title: 'Scary shows',
-        tvShowId: 1,
+        tvShowId: 5,
         coverPicture: null,
         createdAt: new Date(),
         updatedAt: new Date()
       },
         {
         title: 'Funny shows',
-        tvShowId: 2,
+        tvShowId: 7,
         coverPicture: null,
         createdAt: new Date(),
         updatedAt: new Date()
         },
         {
         title: 'Drama shows',
-        tvShowId: 3,
+        tvShowId: 6,
         coverPicture: null,
         createdAt: new Date(),
         updatedAt: new Date()
