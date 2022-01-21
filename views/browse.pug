@@ -15,7 +15,8 @@ block content
                             p(class="rating") Ratings: #{show.rating}/5
                             p(class="synopsis") #{show.synopsis}
                             form(action="/users" method="post")
-                                select
+                                input(name="name" type="hidden" value=show.name)
+                                select(id="channelName" name="channelName")
                                         each channel in channels
-                                            option #{channel.title}
-                                button(type="submit" ) Add to Channels
+                                            option(value=channel.title)= channel.title
+                                button(type="submit" ) Add to Channel
