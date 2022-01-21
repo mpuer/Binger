@@ -3,6 +3,7 @@
 const { text } = require("express");
 const { DATE } = require("sequelize");
 
+
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -13,7 +14,7 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Tvshows', [{
         name: 'Bridgerton',
-        image: null,
+        image: '../images/bridgerton-season-2-netflix-cast-return-date-spoilers-news-1609359153.jpeg',
         showtime: new Date(),
         synopsis: 'Wealth, lust, and betrayal set against the backdrop of Regency-era England, seen through the eyes of the powerful Bridgerton family.',
         rating: 2,
@@ -23,7 +24,7 @@ module.exports = {
       },
       {
         name: 'Pokemon',
-        image: null,
+        image: '../images/pokemon.jpeg',
         showtime: new Date(),
         synopsis: 'Ash Ketchum, his yellow pet Pikachu, and his human friends explore a world of powerful creatures.',
         rating: 5,
@@ -43,7 +44,7 @@ module.exports = {
       },
       {
         name: 'Spiderman',
-        image: null,
+        image: '../images/spiderman.jpeg',
         showtime: new Date(),
         synopsis: 'A young man with spider-like abilities fights crime as a superhero in New York City while trying to have a normal personal life.',
         rating: 5,
@@ -53,7 +54,7 @@ module.exports = {
       },
       {
         name: 'The Haunting of Hill House ',
-        image: null,
+        image: '../images/the_haunting_of_hill_house.jpeg',
         showtime: new Date(),
         synopsis: 'Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it.',
         rating: 4,
@@ -63,7 +64,7 @@ module.exports = {
       },
       {
         name: 'Cobra Kai',
-        image: null,
+        image: '../images/cobra_kai.jpeg',
         showtime: new Date(),
         synopsis: 'Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again.',
         rating: 3,
@@ -103,7 +104,7 @@ module.exports = {
       },
       {
         name: 'The Last Dance',
-        image: null,
+        image: '../images/last_chance_u.jpeg',
         showtime: new Date(),
         synopsis: `Charting the rise of the 1990's Chicago Bulls, led by Michael Jordan, one of the most notable dynasties in sports history.`,
         rating: 4,
