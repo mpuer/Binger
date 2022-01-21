@@ -11,9 +11,7 @@ const { Channel } = db;
 const { csrfProtection, asyncHandler } = require('./util');
 
 router.get('/', asyncHandler(async (req, res) => {
-  const channels = await db.Channel.findAll({
-   
-  })
+  const channels = await db.Channel.findAll()
     
   const logged = loggedIn(req, res)
     res.render('users', {
@@ -21,10 +19,10 @@ router.get('/', asyncHandler(async (req, res) => {
   });
 }))
 
-router.post('/logout', (req, res) => {
+router.get('/logout', (req, res) => {
   logoutUser(req, res);
-  res.redirect('/index')
-});
+  res.redirect('/')
+})
 
 
 module.exports = router;

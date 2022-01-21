@@ -4,9 +4,8 @@ const db = require('../db/models')
 
 const { Tvshow } = db;
 const { Channel } = db;
-
+const {loginUser, loggedIn} = require('../auth')
 const { Op } = require('sequelize');
-const { requireAuth, loggedIn } = require('../auth');
 const router = express.Router()
 
 const { csrfProtection, asyncHandler } = require('./util');
@@ -15,6 +14,7 @@ router.post('/', asyncHandler(async (req, res) => {
     const { keyword } = req.body;
 
     const channels = await Channel.findAll();
+
 
     const data = req.body;
     const array = Object.keys(data);

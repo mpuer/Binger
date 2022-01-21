@@ -2,7 +2,9 @@ const express = require('express')
 
 const db = require('../db/models')
 
-const router = express.Router()
+const router = express.Router();
+const { Channel } = db;
+
 
 const bcrypt = require('bcryptjs')
 const {loginUser, loggedIn} = require('../auth')
@@ -59,6 +61,8 @@ router.post('/', csrfProtection, signupValidators,
             password
         } = req.body
 
+        const channels = await Channel.findAll();
+
         const user = db.User.build({
             username,
         })
@@ -72,7 +76,7 @@ router.post('/', csrfProtection, signupValidators,
             loginUser(req, res, user);
             const logged = loggedIn(req, res)
             res.render('users', {
-            logged,
+            logged,channels
         })
           } else {
             const errors = validatorErrors.array().map((error) => error.msg);
