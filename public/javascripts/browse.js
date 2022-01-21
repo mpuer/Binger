@@ -10,10 +10,7 @@ window.addEventListener("DOMContentLoaded", async (event) => {
             headers: {
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify({
-                "review": review,
-                "movieId": movieId,
-            }),
+            body: JSON.stringify(review),
         });
     });
 });
