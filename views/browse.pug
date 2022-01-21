@@ -16,6 +16,8 @@ block content
                         p #{show.genre}
                         p #{show.rating}
                         p #{show.synopsis}
+                        ul
+                            each review
                         data(id="show-id" value=show.id)
                         select(id="rating-select")
                             option(value="") Rate this show!
