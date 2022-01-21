@@ -14,7 +14,7 @@ module.exports = {
       */
       return queryInterface.bulkInsert('Tvshows', [{
         name: 'Bridgerton',
-        image: '../images/bridgerton-season-2-netflix-cast-return-date-spoilers-news-1609359153.jpeg',
+        image: '/images/bridgerton-season-2-netflix-cast-return-date-spoilers-news-1609359153.jpeg',
         showtime: new Date(),
         synopsis: 'Wealth, lust, and betrayal set against the backdrop of Regency-era England, seen through the eyes of the powerful Bridgerton family.',
         rating: 2,
@@ -24,7 +24,7 @@ module.exports = {
       },
       {
         name: 'Pokemon',
-        image: '../images/pokemon.jpeg',
+        image: '/images/pokemon.jpeg',
         showtime: new Date(),
         synopsis: 'Ash Ketchum, his yellow pet Pikachu, and his human friends explore a world of powerful creatures.',
         rating: 5,
@@ -34,7 +34,7 @@ module.exports = {
       },
       {
         name: 'Last Chance U',
-        image: '../images/last_chance_u.jpeg',
+        image: '/images/last_chance_u.jpeg',
         showtime: new Date(),
         synopsis: 'Intense look inside the world of junior college football, chronicling the stories of players and coaches in the classroom and on the field.',
         rating: 4,
@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         name: 'Spiderman',
-        image: '../images/spiderman.jpeg',
+        image: '/images/spiderman.jpeg',
         showtime: new Date(),
         synopsis: 'A young man with spider-like abilities fights crime as a superhero in New York City while trying to have a normal personal life.',
         rating: 5,
@@ -54,7 +54,7 @@ module.exports = {
       },
       {
         name: 'The Haunting of Hill House ',
-        image: '../images/the_haunting_of_hill_house.jpeg',
+        image: '/images/the_haunting_of_hill_house.jpeg',
         showtime: new Date(),
         synopsis: 'Flashing between past and present, a fractured family confronts haunting memories of their old home and the terrifying events that drove them from it.',
         rating: 4,
@@ -64,7 +64,7 @@ module.exports = {
       },
       {
         name: 'Cobra Kai',
-        image: '../images/cobra_kai.jpeg',
+        image: '/images/cobra_kai.jpeg',
         showtime: new Date(),
         synopsis: 'Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again.',
         rating: 3,
@@ -74,7 +74,7 @@ module.exports = {
       },
       {
         name: 'The Office',
-        image: '../images/the_office.jpeg',
+        image: '/images/the_office.jpeg',
         showtime: new Date(),
         synopsis: 'A mockumentary on a group of typical office workers, where the workday consists of ego clashes, inappropriate behavior, and tedium.',
         rating: 5,
@@ -84,7 +84,7 @@ module.exports = {
       },
       {
         name: '30 Rock',
-        image: '../images/30_rock.jpeg',
+        image: '/images/30_rock.jpeg',
         showtime: new Date(),
         synopsis: 'Liz Lemon, head writer of the sketch comedy show "TGS with Tracy Jordan", must deal with an arrogant new boss and a crazy new star, all while trying to run a successful television show without losing her mind.',
         rating: 5,
@@ -94,7 +94,7 @@ module.exports = {
       },
       {
         name: "Dawson's Creek",
-        image: '../images/dawsons_creek.jpeg',
+        image: '/images/dawsons_creek.jpeg',
         showtime: new Date(),
         synopsis: 'Four friends in a small coastal town help each other cope with adolescence.',
         rating: 4,
@@ -104,7 +104,7 @@ module.exports = {
       },
       {
         name: 'The Last Dance',
-        image: '../images/last_chance_u.jpeg',
+        image: '/images/last_chance_u.jpeg',
         showtime: new Date(),
         synopsis: `Charting the rise of the 1990's Chicago Bulls, led by Michael Jordan, one of the most notable dynasties in sports history.`,
         rating: 4,
@@ -114,7 +114,7 @@ module.exports = {
       },
       {
         name: 'Kingdom',
-        image: '../images/king.jpeg',
+        image: '/images/king.jpeg',
         showtime: new Date(),
         synopsis: 'While strange rumors about their ill King grip a kingdom, the crown prince becomes their only hope against a mysterious plague overtaking the land.',
         rating: 5,
@@ -124,7 +124,7 @@ module.exports = {
       },
       {
         name: 'Ozark',
-        image: '../images/ozark.jpeg',
+        image: '/images/ozark.jpeg',
         showtime: new Date(),
         synopsis: 'A financial advisor drags his family from Chicago to the Missouri Ozarks, where he must launder money to appease a drug boss.',
         rating: 4,

@@ -2,15 +2,17 @@ extends layout.pug
 
 block content
     div(class="column browse-content")
-        h2= `TV Show`
+        h2= `TV Shows`
         div
             ul
                 each show in tvShows
-                    li #{show.images}
-                    li #{show.name}
-                    li #{show.genre}
-                    li #{show.rating}
-                    li #{show.synopsis}
+                    li 
+                      div 
+                        img(src=show.image)
+                        p #{show.name}
+                        p #{show.genre}
+                        p #{show.rating}
+                        p #{show.synopsis}
 
 
 
