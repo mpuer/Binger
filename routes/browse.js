@@ -5,7 +5,7 @@ const db = require('../db/models')
 const { Tvshow } = db;
 
 const { Op } = require('sequelize');
-
+const { requireAuth, loggedIn } = require('../auth');
 const router = express.Router()
 
 const { csrfProtection, asyncHandler } = require('./util');
@@ -42,7 +42,11 @@ router.post('/', asyncHandler(async (req, res) => {
             }
         })
     }
-    res.render('browse', {tvShows, title: 'Browse'})
+    const logged = loggedIn(req, res)
+    res.render('browse', {
+        logged,
+        tvShows
+  });
 }))
 
 module.exports = router
