@@ -35,7 +35,7 @@ app.use(session({
   secret: 'a5d63fc5-17a5-459c-b3ba-6d81792158fc',
   resave: false,
   saveUninitialized: false,
-}));
+}))
 
 // create Session table if it doesn't already exist
 stored.sync();
