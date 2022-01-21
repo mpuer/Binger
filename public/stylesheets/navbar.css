@@ -1,6 +1,7 @@
-html, body {
+body {
     display: flex;
     flex-direction: column;
+    
 }
 
 .navbar {
@@ -53,6 +54,16 @@ a.nav-text {
     height: 1000px;
 }
 
+.review-content {
+    width: 80%;
+    height: 1000px;
+}
+
+.channel-content {
+    width: 80%;
+    height: 1000px;
+}
+
 .main-content {
     width: 80%;
     height: 1000px;
@@ -60,13 +71,27 @@ a.nav-text {
 }
 
 footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     background-color: blanchedalmond;
     position:absolute;
     bottom:0;
     width:100%;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+a {
+    text-decoration: none;
+    color: silver;
+}
+
+p {
+    font-weight: 900;
+    color:rosybrown
 }
 
 form {
@@ -96,8 +121,4 @@ label {
 
 search-box {
     padding-bottom: 100px;
-}
-
-.names {
-    justify-content: space-evenly;
 }
