@@ -28,13 +28,19 @@ router.get('/logout', (req, res) => {
 
 router.post('/', asyncHandler(async (req, res) => {
 
-  const shows = await db.Tvshow.findAll();
+  // const shows = await db.Tvshow.findAll();
     
-  const logged = loggedIn(req, res)
-  const { name, channelName } = req.body;
+  // const logged = loggedIn(req, res)
+  // const { channelName, showId } = req.body;
+  // // Get channel ie scary shows
+  // console.log(`its here!!!!!!!!!!!!!`, channelName, showId)
+  // const channel = await Channel.create({channelName, showId})
+  // // add tvshowId to that channel
+  // // pull all tvshowIds from channel
+  // // render tvshow.title in our pug 
 
   res.render('users', {
-    logged, shows, name, channelName
+    logged, shows, channel
   });
 
 }));
