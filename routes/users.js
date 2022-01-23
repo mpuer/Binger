@@ -12,6 +12,7 @@ const { User } = db;
 
 
 const { csrfProtection, asyncHandler } = require('./util');
+const e = require('express');
 
 router.get('/', asyncHandler(async (req, res) => {
   const channels = await db.Channel.findAll();
@@ -46,18 +47,32 @@ router.post('/', asyncHandler(async (req, res) => {
     }]
   });
 
-  console.log("Over here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", userChannels)
+  const channelNames = userChannels.map(el => el.dataValues.title)
 
-  const shows = await db.Tvshow.findAll({
-    include: [{
-      model: Channel,
-      required: true,
-      where: {title: channelName + ` ${userId}`}
-    }]
+  let channelInput = {};
+  channelNames.forEach(async (channel) => {
+    console.log(channel);
+    const shows = await db.Tvshow.findAll({
+      include: [{
+        model: Channel,
+        required: true,
+        where: {title: `${channel}`}
+      }]
+    });
+    channelInput[`${channel}`] = shows;
+    console.log('Over here!!!!!!!!!!!!!', channelInput)
   });
 
+  // const shows = await db.Tvshow.findAll({
+  //   include: [{
+  //     model: Channel,
+  //     required: true,
+  //     where: {title: channelName + ` ${userId}`}
+  //   }]
+  // });
+
   res.render('users', {
-    logged, shows, channel
+    logged, channelInput
   });
 
 }));
