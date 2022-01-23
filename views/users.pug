@@ -4,6 +4,7 @@ block content
     div(class="column user-content")
         div(class="column channel-content")
         h2 Channels
-                h3 #{channel.title}
-                    each show in shows
-                        h4  #{show.name}
+            each label in labels
+                h3 #{label}
+                    each show in channelInput[label]
+                        h4  #{show.dataValues.name}

@@ -19,8 +19,8 @@ router.get('/', asyncHandler(async (req, res) => {
   const shows = await db.Tvshow.findAll();
 
   const logged = loggedIn(req, res)
-    res.render('users', {
-      logged, channels, shows
+  res.render('users', {
+    logged, channels, shows
   });
 }))
 
@@ -35,33 +35,90 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const { channelName, showId } = req.body;
 
-  const channel = await Channel.create({"title": channelName + ` ${userId}`, "tvShowId": showId, "coverPicture": null});
+  const channel = await Channel.create({ "title": channelName + ` ${userId}`, "tvShowId": showId, "coverPicture": null });
   const channelId = channel.id;
-  const userShow = await Usershow.create({"channelId": channelId, "usersId": userId});
+  const userShow = await Usershow.create({ "channelId": channelId, "usersId": userId });
 
   const userChannels = await Channel.findAll({
     include: [{
       model: User,
       required: true,
-      where: {id: userId}
+      where: { id: userId }
     }]
   });
 
   const channelNames = userChannels.map(el => el.dataValues.title)
 
-  let channelInput = {};
-  channelNames.forEach(async (channel) => {
-    console.log(channel);
+  const channelInput = {};
+
+
+
+
+  for (let i = 0; i < channelNames.length; i++) {
+    let channel = channelNames[i]
     const shows = await db.Tvshow.findAll({
       include: [{
         model: Channel,
         required: true,
-        where: {title: `${channel}`}
+        where: { title: `${channel}` }
       }]
     });
     channelInput[`${channel}`] = shows;
-    console.log('Over here!!!!!!!!!!!!!', channelInput)
-  });
+    console.log(shows);
+  }
+  console.log('Over Here!!!!!!!!!!!!!!!!!', channelInput);
+  const labels = Object.keys(channelInput)
+  console.log(labels);
+
+
+
+
+  // const result = (async () => {
+
+  //   for (let e of channelNames) {
+  //     const shows = await db.Tvshow.findAll({
+  //           include: [{
+  //             model: Channel,
+  //             required: true,
+  //             where: {title: `${e}`}
+  //           }]
+  //     });
+  //     channelInput[`${channel}`] = shows;
+  //   }
+  //   return channelInput;
+  // })();
+
+
+
+  // const buildOject = async (channel) => {
+  //   const shows = await db.Tvshow.findAll({
+  //     include: [{
+  //       model: Channel,
+  //       required: true,
+  //       where: {title: `${channel}`}
+  //     }]
+  //   });
+  //   channelInput[`${channel}`] = shows;
+  // }
+
+  // for (let i = 0; i < channelNames.length; i++) {
+  //   buildOject(channelNames[i]);
+  // }
+
+  // console.log(channelInput)
+
+  // channelNames.forEach(async (channel) => {
+  //   console.log(channel);
+  //   const shows = await db.Tvshow.findAll({
+  //     include: [{
+  //       model: Channel,
+  //       required: true,
+  //       where: {title: `${channel}`}
+  //     }]
+  //   });
+  //   channelInput[`${channel}`] = shows;
+  //   console.log('Over here!!!!!!!!!!!!!', channelInput)
+  // });
 
   // const shows = await db.Tvshow.findAll({
   //   include: [{
@@ -72,7 +129,7 @@ router.post('/', asyncHandler(async (req, res) => {
   // });
 
   res.render('users', {
-    logged, channelInput
+    logged, channelInput, labels
   });
 
 }));
