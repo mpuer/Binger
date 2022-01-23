@@ -35,7 +35,7 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const { channelName, showId } = req.body;
 
-  const channel = await Channel.create({ "title": channelName + ` ${userId}`, "tvShowId": showId, "coverPicture": null });
+  const channel = await Channel.create({ "title": `Binger${userId}'s ` + channelName + ' channel:', "tvShowId": showId, "coverPicture": null });
   const channelId = channel.id;
   const userShow = await Usershow.create({ "channelId": channelId, "usersId": userId });
 
@@ -64,69 +64,10 @@ router.post('/', asyncHandler(async (req, res) => {
       }]
     });
     channelInput[`${channel}`] = shows;
-    console.log(shows);
   }
-  console.log('Over Here!!!!!!!!!!!!!!!!!', channelInput);
-  const labels = Object.keys(channelInput)
-  console.log(labels);
 
+  const labels = Object.keys(channelInput);
 
-
-
-  // const result = (async () => {
-
-  //   for (let e of channelNames) {
-  //     const shows = await db.Tvshow.findAll({
-  //           include: [{
-  //             model: Channel,
-  //             required: true,
-  //             where: {title: `${e}`}
-  //           }]
-  //     });
-  //     channelInput[`${channel}`] = shows;
-  //   }
-  //   return channelInput;
-  // })();
-
-
-
-  // const buildOject = async (channel) => {
-  //   const shows = await db.Tvshow.findAll({
-  //     include: [{
-  //       model: Channel,
-  //       required: true,
-  //       where: {title: `${channel}`}
-  //     }]
-  //   });
-  //   channelInput[`${channel}`] = shows;
-  // }
-
-  // for (let i = 0; i < channelNames.length; i++) {
-  //   buildOject(channelNames[i]);
-  // }
-
-  // console.log(channelInput)
-
-  // channelNames.forEach(async (channel) => {
-  //   console.log(channel);
-  //   const shows = await db.Tvshow.findAll({
-  //     include: [{
-  //       model: Channel,
-  //       required: true,
-  //       where: {title: `${channel}`}
-  //     }]
-  //   });
-  //   channelInput[`${channel}`] = shows;
-  //   console.log('Over here!!!!!!!!!!!!!', channelInput)
-  // });
-
-  // const shows = await db.Tvshow.findAll({
-  //   include: [{
-  //     model: Channel,
-  //     required: true,
-  //     where: {title: channelName + ` ${userId}`}
-  //   }]
-  // });
 
   res.render('users', {
     logged, channelInput, labels
