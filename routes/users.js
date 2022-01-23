@@ -30,21 +30,16 @@ router.post('/', asyncHandler(async (req, res) => {
   const logged = loggedIn(req, res)
 
   const { channelName, showId } = req.body;
-  // Get channel ie scary shows
+  
   const photo = null;
-  const channel = await Channel.create({"title": "Not Not Really a Cool Show", "tvShowId": 4, photo});
-  console.log(`its here!!!!!!!!!!!!!`, channel)
+  const channel = await Channel.create({"title": channelName, "tvShowId": showId, photo});
   const shows = await db.Tvshow.findAll({
     include: [{
       model: Channel,
       required: true,
-      where: {title: "Not Not Really a Cool Show"}
+      where: {title: channelName}
     }]
   });
-
-  // add tvshowId to that channel
-  // pull all tvshowIds from channel
-  // render tvshow.title in our pug
 
   res.render('users', {
     logged, shows, channel
