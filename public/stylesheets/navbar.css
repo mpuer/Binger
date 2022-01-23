@@ -28,6 +28,7 @@ a.nav-text {
     /* display: flex;  */
     /* flex-direction: column; */
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .column {
@@ -69,8 +70,18 @@ a.nav-text {
 .main-content {
     width: 80%;
     height: 1000px;
-    background-image: url("/images/icon.jpeg");
-    background-repeat: no-repeat;
+    /* background-image: url("/images/icon.jpeg");
+    background-repeat: no-repeat; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+    padding-bottom: 250px;
+}
+
+.binger-image {
+    /* max-width: 500px;
+    height: 300px; */
 }
 
 footer {
