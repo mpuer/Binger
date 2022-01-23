@@ -8,6 +8,7 @@ const router = express.Router()
 const { Channel } = db;
 const { Tvshow } = db;
 const { Usershow } = db;
+const { User } = db;
 
 
 const { csrfProtection, asyncHandler } = require('./util');
@@ -36,6 +37,17 @@ router.post('/', asyncHandler(async (req, res) => {
   const channel = await Channel.create({"title": channelName, "tvShowId": showId, "coverPicture": null});
   const channelId = channel.id;
   const userShow = await Usershow.create({"channelId": channelId, "usersId": userId});
+
+  const userChannels = await Channel.findAll({
+    include: [{
+      model: User,
+      required: true,
+      where: {id: userId}
+    }]
+  });
+
+  console.log("Over here!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", userChannels)
+
   const shows = await db.Tvshow.findAll({
     include: [{
       model: Channel,
