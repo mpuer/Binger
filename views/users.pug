@@ -7,4 +7,6 @@ block content
             each label in labels
                 h3 #{label}
                     each show in channelInput[label]
-                        h4  #{show.dataValues.name}
+                        div
+                            h4  #{show.dataValues.name}
+                            h4  #{show.dataValues.showtime}

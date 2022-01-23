@@ -64,6 +64,7 @@ router.post('/', asyncHandler(async (req, res) => {
       }]
     });
     channelInput[`${channel}`] = shows;
+    console.log(channelInput)
   }
 
   const labels = Object.keys(channelInput);
