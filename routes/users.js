@@ -51,9 +51,6 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const channelInput = {};
 
-
-
-
   for (let i = 0; i < channelNames.length; i++) {
     let channel = channelNames[i]
     const shows = await db.Tvshow.findAll({
@@ -64,7 +61,6 @@ router.post('/', asyncHandler(async (req, res) => {
       }]
     });
     channelInput[`${channel}`] = shows;
-    console.log(channelInput)
   }
 
   const labels = Object.keys(channelInput);
