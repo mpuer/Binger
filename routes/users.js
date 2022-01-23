@@ -7,17 +7,20 @@ const router = express.Router()
 
 const { Channel } = db;
 const { Tvshow } = db;
+const { Usershow } = db;
+const { User } = db;
 
 
 const { csrfProtection, asyncHandler } = require('./util');
+const e = require('express');
 
 router.get('/', asyncHandler(async (req, res) => {
   const channels = await db.Channel.findAll();
   const shows = await db.Tvshow.findAll();
-    
+
   const logged = loggedIn(req, res)
-    res.render('users', {
-      logged, channels, shows
+  res.render('users', {
+    logged, channels, shows
   });
 }))
 
@@ -27,20 +30,44 @@ router.get('/logout', (req, res) => {
 });
 
 router.post('/', asyncHandler(async (req, res) => {
+  const logged = loggedIn(req, res)
+  const { userId } = req.session.auth;
 
-  // const shows = await db.Tvshow.findAll();
-    
-  // const logged = loggedIn(req, res)
-  // const { channelName, showId } = req.body;
-  // // Get channel ie scary shows
-  // console.log(`its here!!!!!!!!!!!!!`, channelName, showId)
-  // const channel = await Channel.create({channelName, showId})
-  // // add tvshowId to that channel
-  // // pull all tvshowIds from channel
-  // // render tvshow.title in our pug 
+  const { channelName, showId } = req.body;
+
+  const channel = await Channel.create({ "title": `Binger${userId}'s ` + channelName + ' channel:', "tvShowId": showId, "coverPicture": null });
+  const channelId = channel.id;
+  const userShow = await Usershow.create({ "channelId": channelId, "usersId": userId });
+
+  const userChannels = await Channel.findAll({
+    include: [{
+      model: User,
+      required: true,
+      where: { id: userId }
+    }]
+  });
+
+  const channelNames = userChannels.map(el => el.dataValues.title)
+
+  const channelInput = {};
+
+  for (let i = 0; i < channelNames.length; i++) {
+    let channel = channelNames[i]
+    const shows = await db.Tvshow.findAll({
+      include: [{
+        model: Channel,
+        required: true,
+        where: { title: `${channel}` }
+      }]
+    });
+    channelInput[`${channel}`] = shows;
+  }
+
+  const labels = Object.keys(channelInput);
+
 
   res.render('users', {
-    logged, shows, channel
+    logged, channelInput, labels
   });
 
 }));

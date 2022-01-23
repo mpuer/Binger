@@ -3,8 +3,9 @@ const { check, validationResult } = require('express-validator');
 const db = require('../db/models')
 const bcrypt = require('bcryptjs');
 const router = express.Router()
-const {loginUser, loggedIn} = require('../auth')
+const { loginUser, loggedIn } = require('../auth')
 const { Channel } = db;
+const { User } = db;
 
 const { csrfProtection, asyncHandler } = require('./util');
 
@@ -17,23 +18,23 @@ router.get('/', csrfProtection, (req, res) => {
 
 const loginValidators = [
   check('username')
-    .exists({checkFalsy: true})
+    .exists({ checkFalsy: true })
     .withMessage('User Name cannot be blank')
     .isLength({ max: 20 })
     .withMessage('User Name must not be more than 20 characters long'),
   check('password')
-    .exists({checkFalsy: true})
+    .exists({ checkFalsy: true })
     .withMessage('Password cannot be blank'),
 ]
 
 router.post('/', csrfProtection, loginValidators,
-  asyncHandler(async(req, res) => {
+  asyncHandler(async (req, res) => {
     const {
       username,
       password,
     } = req.body
     let errors = [];
-    const channels = await db.Channel.findAll()
+
 
     const validatorErrors = validationResult(req);
 
@@ -48,21 +49,50 @@ router.post('/', csrfProtection, loginValidators,
         if (passwordMatch) {
           loginUser(req, res, user)
           const logged = loggedIn(req, res)
+
+          const { userId } = req.session.auth;
+
+          const userChannels = await Channel.findAll({
+            include: [{
+              model: User,
+              required: true,
+              where: { id: userId }
+            }]
+          });
+
+          const channelNames = userChannels.map(el => el.dataValues.title)
+
+          const channelInput = {};
+
+          for (let i = 0; i < channelNames.length; i++) {
+            let channel = channelNames[i]
+            const shows = await db.Tvshow.findAll({
+              include: [{
+                model: Channel,
+                required: true,
+                where: { title: `${channel}` }
+              }]
+            });
+            channelInput[`${channel}`] = shows;
+          }
+
+          const labels = Object.keys(channelInput);
+
           res.render('users', {
-          logged, channels
+            logged, channelInput, labels
           })
         }
       }
       errors.push('Login failed for the user and password provided')
     } else {
       errors = validatorErrors.array().map((error) => error.msg)
-   }
-   res.render('sign-in', {
-     title: 'Sign In',
-     username,
-     errors,
-     csrfToken: req.csrfToken()
-   })
-}))
+    }
+    res.render('sign-in', {
+      title: 'Sign In',
+      username,
+      errors,
+      csrfToken: req.csrfToken()
+    })
+  }))
 
 module.exports = router;

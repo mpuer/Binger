@@ -6,7 +6,7 @@ block content
         div
             ul
                 each show in tvShows
-                    li 
+                    li
                       div(class="shows")
                         img(src=show.image class="images")
                         div(class="description")
@@ -16,7 +16,5 @@ block content
                             p(class="synopsis") #{show.synopsis}
                             form(action="/users" method="post")
                                 input(name="showId" type="hidden" value=show.id)
-                                select(id="channelName" name="channelName")
-                                        each channel in channels
-                                            option(value=channel.title)= channel.title
+                                input(name="channelName" type="text" placeholder="Watchlist name")
                                 button(type="submit" ) Add to Channel

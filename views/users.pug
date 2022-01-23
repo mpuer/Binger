@@ -4,5 +4,10 @@ block content
     div(class="column user-content")
         div(class="column channel-content")
         h2 Channels
-                //- div #{channel.channelName}
-                    div #{channel.Tvshow.name}
+        if channelInput
+            each label in labels
+                h3 #{label}
+                    each show in channelInput[label]
+                        div
+                            h4  #{show.dataValues.name}
+                            h4  #{show.dataValues.showtime}
