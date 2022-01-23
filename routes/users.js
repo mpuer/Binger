@@ -34,7 +34,7 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const { channelName, showId } = req.body;
 
-  const channel = await Channel.create({"title": channelName, "tvShowId": showId, "coverPicture": null});
+  const channel = await Channel.create({"title": channelName + ` ${userId}`, "tvShowId": showId, "coverPicture": null});
   const channelId = channel.id;
   const userShow = await Usershow.create({"channelId": channelId, "usersId": userId});
 
@@ -52,7 +52,7 @@ router.post('/', asyncHandler(async (req, res) => {
     include: [{
       model: Channel,
       required: true,
-      where: {title: channelName}
+      where: {title: channelName + ` ${userId}`}
     }]
   });
 
