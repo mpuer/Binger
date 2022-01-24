@@ -67,7 +67,7 @@ router.post('/', asyncHandler(async (req, res) => {
   const { channelName, showId } = req.body;
   console.log('this is channelName variable:', channelName)
   console.log('this is showId variable:', showId)
-  const channel = await Channel.create({ "title": `Binger${userId}'s ` + channelName + ' channel:', "tvShowId": showId, "coverPicture": null });
+  const channel = await Channel.create({ "title": channelName , "tvShowId": showId, "coverPicture": null });
   console.log('this is channel variable:', channel)
   const channelId = channel.id;
   console.log('this is channelId variable:', channelId)
