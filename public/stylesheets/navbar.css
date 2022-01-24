@@ -187,3 +187,12 @@ h2 {
 .binger-icon {
     font-size: larger;
 }
+
+.notice {
+	display: grid;
+	place-items: center;
+	min-height: 200px;
+	border: 8px solid;
+	padding: 1rem;
+    border-image: linear-gradient(45deg, blanchedalmond, red) 1;
+}
