@@ -60,12 +60,17 @@ router.get('/logout', (req, res) => {
 
 router.post('/', asyncHandler(async (req, res) => {
   const logged = loggedIn(req, res)
+  console.log('This is logged variable:', logged)
   const { userId } = req.session.auth;
+  console.log('this is userId variable:', userId)
 
   const { channelName, showId } = req.body;
-
+  console.log('this is channelName variable:', channelName)
+  console.log('this is showId variable:', showId)
   const channel = await Channel.create({ "title": `Binger${userId}'s ` + channelName + ' channel:', "tvShowId": showId, "coverPicture": null });
+  console.log('this is channel variable:', channel)
   const channelId = channel.id;
+  console.log('this is channelId variable:', channelId)
   await Usershow.create({ "channelId": channelId, "usersId": userId });
 
   const userChannels = await Channel.findAll({
@@ -76,7 +81,10 @@ router.post('/', asyncHandler(async (req, res) => {
     }]
   });
 
+  console.log('this is userChannels variable:', userChannels)
+
   const channelNames = userChannels.map(el => el.dataValues.title)
+  console.log('this is channelNames variable:', channelNames)
 
   const channelInput = {};
 
@@ -92,7 +100,11 @@ router.post('/', asyncHandler(async (req, res) => {
     channelInput[`${channel}`] = shows;
   }
 
+  console.log('this is channelInput variable:', channelInput)
+
   const labels = Object.keys(channelInput);
+
+  console.log('this is labels variable:', labels)
 
 
   res.render('users', {
