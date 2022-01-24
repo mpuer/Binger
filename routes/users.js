@@ -15,12 +15,38 @@ const { csrfProtection, asyncHandler } = require('./util');
 const e = require('express');
 
 router.get('/', asyncHandler(async (req, res) => {
-  const channels = await db.Channel.findAll();
-  const shows = await db.Tvshow.findAll();
+  const { userId } = req.session.auth;
 
-  const logged = loggedIn(req, res)
+  const userChannels = await Channel.findAll({
+    include: [{
+      model: User,
+      required: true,
+      where: { id: userId }
+    }]
+  });
+
+  const channelNames = userChannels.map(el => el.dataValues.title)
+
+  const channelInput = {};
+
+  for (let i = 0; i < channelNames.length; i++) {
+    let channel = channelNames[i]
+    const shows = await db.Tvshow.findAll({
+      include: [{
+        model: Channel,
+        required: true,
+        where: { title: `${channel}` }
+      }]
+    });
+    channelInput[`${channel}`] = shows;
+  }
+
+  const labels = Object.keys(channelInput);
+
+
+  const logged = loggedIn(req, res);
   res.render('users', {
-    logged, channels, shows
+    logged, channelInput, labels
   });
 }))
 
