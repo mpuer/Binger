@@ -81,9 +81,16 @@ router.post('/', csrfProtection, loginValidators,
           res.render('users', {
             logged, channelInput, labels
           })
+        } else {
+          errors.push('Login failed for the user and password provided')
+          res.render('sign-in', {
+            title: 'Sign In',
+            username,
+            errors,
+            csrfToken: req.csrfToken()
+          })
         }
       }
-      errors.push('Login failed for the user and password provided')
     } else {
       errors = validatorErrors.array().map((error) => error.msg)
       res.render('sign-in', {
@@ -93,6 +100,7 @@ router.post('/', csrfProtection, loginValidators,
         csrfToken: req.csrfToken()
       })
     }
-  }))
+}))
+
 
 module.exports = router;
