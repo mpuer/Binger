@@ -86,13 +86,13 @@ router.post('/', csrfProtection, loginValidators,
       errors.push('Login failed for the user and password provided')
     } else {
       errors = validatorErrors.array().map((error) => error.msg)
+      res.render('sign-in', {
+        title: 'Sign In',
+        username,
+        errors,
+        csrfToken: req.csrfToken()
+      })
     }
-    res.render('sign-in', {
-      title: 'Sign In',
-      username,
-      errors,
-      csrfToken: req.csrfToken()
-    })
   }))
 
 module.exports = router;
