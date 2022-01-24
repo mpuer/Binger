@@ -66,7 +66,7 @@ router.post('/', asyncHandler(async (req, res) => {
 
   const channel = await Channel.create({ "title": `Binger${userId}'s ` + channelName + ' channel:', "tvShowId": showId, "coverPicture": null });
   const channelId = channel.id;
-  const userShow = await Usershow.create({ "channelId": channelId, "usersId": userId });
+  await Usershow.create({ "channelId": channelId, "usersId": userId });
 
   const userChannels = await Channel.findAll({
     include: [{
