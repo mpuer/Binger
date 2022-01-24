@@ -36,7 +36,6 @@ router.post('/', asyncHandler(async (req, res) => {
 
     else {
         array.shift()
-        console.log('debug', array)
         tvShows = await Tvshow.findAll({
             where: {
                 genre: {
