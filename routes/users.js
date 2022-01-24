@@ -15,7 +15,10 @@ const { csrfProtection, asyncHandler } = require('./util');
 const e = require('express');
 
 router.get('/', asyncHandler(async (req, res) => {
+  if (!req.session.auth) { res.redirect("sign-in")}
   const { userId } = req.session.auth;
+
+
 
   const userChannels = await Channel.findAll({
     include: [{
